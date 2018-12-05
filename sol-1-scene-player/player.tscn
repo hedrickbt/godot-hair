@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://player.gd" type="Script" id=1]
+[ext_resource path="res://art/running_standin_1.png" type="Texture" id=2]
+
+[node name="player" type="Area2D"]
+position = Vector2( 940.294, 98.0744 )
+script = ExtResource( 1 )
+
+[node name="sprite" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+
