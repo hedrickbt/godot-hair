@@ -114,8 +114,40 @@ Normalizing a vector means reducing its length to 1 while preserving its directi
 https://docs.godotengine.org/en/3.0/tutorials/math/vector_math.html
 25.  What is delta? 
 It is the amount of time between frames - helps adjust for non-60 FPS times
+26. Add a CollisionShape2D node as a child of player - on the bottom of the list.  Name it: collision
+	a. Use the shape property to create a new RectangleShape2D
+	b. Be sure to only grab the two midpoint handles for resizing.
+27. Code change for limiting movement. New extents variable and clamp function
+extends Area2D
 
-DONE!!!!!
+var screensize
+var extents
+var speed = 400
+var vel = Vector2()
+
+
+func _ready():
+	screensize = get_viewport_rect().size
+	extents = get_node("collision").get_shape().get_extents()
+	position = screensize / 2
+	
+func _process(delta):
+	var input = Vector2()
+	input.x = int(Input.is_action_pressed("ui_right")) - int(Input.is_action_pressed("ui_left"))
+	input.y = int(Input.is_action_pressed("ui_down")) - int(Input.is_action_pressed("ui_up"))
+	vel = input.normalized() * speed
+	var pos = position + ( vel * delta )
+	pos.x = clamp(pos.x, extents.x, screensize.x - extents.x)
+	pos.y = clamp(pos.y, extents.y, screensize.y - extents.y)
+	
+	position = pos
+28. What does get_extents() return?
+The rectangle's half extents Vector2(). The width and height of this shape is twice the half extents - or the extents are 1/2 the width & height
+29. What is the clamp function?
+Clamps value and returns a value not less than min and not more than max.
+	
+	
+DONE!!
 
 NOTE: Unable to write to file...
 Click the stop button. Square button near the play scene button.
