@@ -3,7 +3,7 @@ Create a player scene where you can use the keyboard to move the player around
 
 1. Add a scene ( use the empty one if it starts up that way )
 2. Add a node: Area2D / player
-	a. Add a node: Sprite / sprite
+	a. Add a child node: Sprite / sprite
 	b. Attach the art/running_standin_1.png to the sprite.Texture via Drag-N-Drop
 3. Save the scene as: player.tscn
 4. Play the scene
