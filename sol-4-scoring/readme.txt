@@ -78,6 +78,8 @@ func _on_hair_grabbed():
 
 16. Save the scene ( ctrl+s ) / Play the Game (F5) - Houston we have scoring!  
 
+===================== BREAK/STOP HERE =================
+
 #### Handle hair re-spawn / level up
 17. Go to the main.tscn scene
 18. Edit the main script
