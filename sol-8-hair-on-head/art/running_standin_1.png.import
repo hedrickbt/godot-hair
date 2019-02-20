@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/running_3.png-79d80b160c9ee82df2db6d213224bf5a.stex"
+path="res://.import/running_standin_1.png-f7ed882d823df9800d5fd109c5d4b90f.stex"
 
 [deps]
 
-source_file="res://art/running_3.png"
-dest_files=[ "res://.import/running_3.png-79d80b160c9ee82df2db6d213224bf5a.stex" ]
+source_file="res://art/running_standin_1.png"
+dest_files=[ "res://.import/running_standin_1.png-f7ed882d823df9800d5fd109c5d4b90f.stex" ]
 
 [params]
 
@@ -17,7 +17,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=false
+flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
