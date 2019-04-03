@@ -15,9 +15,9 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="CircleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=2]
 
-radius = 18.2292
+extents = Vector2( 17.5471, 13.3956 )
 
 [node name="birdie" index="0" instance=ExtResource( 1 )]
 position = Vector2( 560.692, 301.899 )
@@ -28,6 +28,5 @@ frames = SubResource( 1 )
 frame = 3
 
 [node name="collision" parent="." index="1"]
-position = Vector2( -4.80112, -3 )
 shape = SubResource( 2 )
 

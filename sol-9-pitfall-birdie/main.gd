@@ -7,6 +7,8 @@ onready var score_label = get_node("hud/score_label")
 onready var time_label = get_node("hud/time_label")
 onready var game_timer = get_node("game_timer")
 onready var player = get_node("player")
+onready var pitfall_container = get_node("pitfall_container")
+onready var birdie = preload("res://birdie.tscn")
 
 var screensize 
 var level = 1
@@ -27,7 +29,29 @@ func _process(delta):
 		$level_up.play()
 		level += 1
 		spawn_hair(level * 10)
+	if level >= 1:
+		handle_pitfalls()
 
+func handle_pitfalls():
+	if level >= 1:
+		if pitfall_container.get_child_count() == 0:
+			var b = birdie.instance()
+			b.connect("pitfall_collided",self,"_on_pitfall_collided")
+			pitfall_container.add_child(b)
+			b.position = Vector2(rand_range(0, screensize.x - 40),
+								 rand_range(0, screensize.y - 40))
+	
+func _on_pitfall_collided(texture):
+	#player.update_active_hair(texture)
+	#$pick_up.play()
+	var new_time_left = 0.1
+	new_time_left = clamp(
+		game_timer.time_left-10.0,
+		new_time_left,
+		game_timer.wait_time)
+	game_timer.wait_time = new_time_left
+	game_timer.start()
+		
 
 func spawn_hair(num):
 	for i in range(num):

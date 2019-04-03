@@ -68,16 +68,20 @@ We will need:
 		i.  x: 0.4
 		ii. y: 0.4
 3. Click on the collision | Shape | [empty]
-	a. New Circle Shape 2D
-	b. Resize the circle with your mouse by pulling on the outer dot.
+	a. New RectangleShape2D
+	b. Resize the circle with your mouse by pulling on the outer dots.
 	c. Inspector | Node2D | Transform | Position
-		i.  x: -5 
-		ii. y: -3
+		i.  x: 0 
+		ii. y: 0
 	d. Lock the sprite and collision together.
 	e. Move the two locked items to the middle of the scene
 4. Save the scene ( ctrl+s ) and play the scene (F6) not the project - is the bird animated?  YES
 	
-WIP
+### Adding birdie to the main scene
+1. Open the main scene (main.tscn)
+2. Add a child node under main of type Node2D called pitfall_container
+3. Open the main script (main.gd)
+Working on pitfall code
 	
 
 DONE!!

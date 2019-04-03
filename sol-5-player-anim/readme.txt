@@ -6,6 +6,7 @@ We will need
 art:
 	running_3.png
 	running_3a.png
+	raspberrypi_host/share/godot/hair/art
 	
 1. Open the player scene (player.tscn)
 3. Rename the sprite node to sprite_old
@@ -36,7 +37,7 @@ onready var sprite = get_node("sprite")
 var screensize
 ...
 func _process(delta):
-...
+... 
 	vel = input.normalized() * speed
 	if (vel.length() > 0):
 		sprite.play()
