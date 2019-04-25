@@ -2,6 +2,13 @@ Goals:
 1. When the player picks up hair, levels up, or hits game over then play a sound
 2. Background music
 
+
+Need
+* art/sfx/pick_up_ping.wav
+* art/sfx/level_change_ca_ching.wav
+* art/sfx/game_over_aaaah_bye.wav
+* art/music/awake10_megaWall.ogg
+
 ### Adding pick up sound for hair
 We will need
 art/sfx/pick_up_ping.wav

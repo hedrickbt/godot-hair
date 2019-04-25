@@ -8,7 +8,7 @@ We will need:
 	art/hairless.png
 	
 1. Open the player scene (player.tscn)
-2. Under the player node, at the bottom of the list, add a Sprite 2D called active_hair
+2. Under the player node, at the bottom of the list, add a Sprite called active_hair
 	a. Assign the art/hairless.png image to the Texture attribute in the inspector
 	b. Under Offset | Offset, set x:0, y:-45
 3. Save the scene ( ctrl+s ) / Play the Game (F5) - Do you see the "BALD" hair? YES.  Does it change to the real hair? NO
@@ -42,8 +42,15 @@ func update_active_hair(texture):  // new function
 	active_hair.texture = texture
 	active_hair.visible = true
 
-3. Open the main scene (main.tscn)
-4. Edit the main script
+3. Open the hair scene (hair.tscn)
+4. Edit the hair script
+func _on_hair_area_entered(area):
+	if area.name == "player":
+		emit_signal("hair_grabbed", $sprite.texture) // modified line
+
+	
+5. Open the main scene (main.tscn)
+6. Edit the main script
 ...
 onready var game_timer = get_node("game_timer")
 onready var player = get_node("player")  // new line
@@ -55,7 +62,7 @@ func _on_hair_grabbed(texture):
 	$pick_up.play()
 	...
 ...
-5. Save the scene ( ctrl+s ) / Play the Game (F5) - Does the hair update when you collect it? YES
+7. Save the scene ( ctrl+s ) / Play the Game (F5) - Does the hair update when you collect it? YES
 
 
 DONE!!

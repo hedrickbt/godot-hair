@@ -2,11 +2,15 @@ Goals:
 1. Improve the game font
 2. Add a "smoke" effect to the player while running around
 
+Files needed
+	- art/smoke_ring.png
+	- art/font/Xolonium-Bold.ttf
 
 
 ### Updating the font
 We will need:
 	art/font/Xolonium-Bold.ttf
+	
 	
 1. Open the main scene (main.tscn)
 2. Under main/hud, update the following labels: score_label, time_label, go_lable
@@ -21,6 +25,9 @@ We will need:
 
 
 ### Adding the player smoke effect
+We will need:
+	- art/smoke_ring.png
+	
 1. Open the player scene (player.tscn)
 2. Add a child node to the player for Particles2D
 	a. Name: trail
@@ -29,7 +36,7 @@ We will need:
 	d. Time | Speed Scale: 2
 	e. Textures | Texture: art/smoke_ring.png
 	f. Canvas Item | Visibility | Show Behind Parent: Check
-	g. Process Material | New ParticalsMaterial
+	g. Process Material | Material | New ParticalsMaterial
 	h. Click on the new ParticlesMaterial
 		i.    Gravity | x: 0, y: 0, z: 0
 		ii.   Scale | Scale Curve | New Curve Texture. Click on the Curve.  
