@@ -1,11 +1,17 @@
-Goals:
+Goals for birdie:
 1. Learn how to handle scene inheritance - to save time/typing and avoid mistakes
 2. New pitfall - birdie
-	a. icon that moves around haphazardly - take time away 
-	b. Tweeting bird sound effect
-	c. Stays around for 10 seconds
+	a. Icon that when you run into it decreases your time
+	b. Icon that moves around haphazardly
+	c. Tweeting bird sound effect
+	d. Stays around for 10 seconds
+	e. Sound effect when you run into the birdie
+	f. Visual effect when you run into the birdie
 
 
+	
+###  Birdie implementation 2a
+###		Icon that when you run into it decreases your time
 
 ### Adding the "super scene" for pitfalls
 1. Create a new scene
@@ -28,12 +34,17 @@ export (int) var seconds_on_screen = 10
 signal pitfall_collided
 	
 func _ready():
+	screensize = get_viewport_rect().size
+	extents = get_node("collision").get_shape().get_extents()
 	sprite = $sprite
 	sprite.play()
+	if name == "birdie":
+		time_impact = -10
+
 		
 func _on_pitfall_area_entered(area):
 	if area.name == "player":
-		emit_signal("pitfall_collided", self.name)
+		emit_signal("pitfall_collided", self.name, time_impact, score_impact)
 		shape_owner_clear_shapes(get_shape_owners()[0])
 		queue_free()
 
@@ -59,7 +70,7 @@ We will need:
 	b. Rename pitfall to birdie
 	c. Save the scene as birdie.tscn
 	d. BE AWARE - editing the birdie script is also changing the pitfall script
-2. Attach the art/birdie.png to the sprite Texture attribute
+2. Attach the art/birdie...png to the sprite Texture attribute
 	a. Sprite | Frames | [empty] | New Sprite Frames
 	b. Sprite Frames | Open Editor
 	c. For the default animation, drag in birdie-0.png through birdie-3.png
@@ -81,8 +92,51 @@ We will need:
 1. Open the main scene (main.tscn)
 2. Add a child node under main of type Node2D called pitfall_container
 3. Open the main script (main.gd)
-Working on pitfall code
+...
+onready var game_timer = get_node("game_timer")
+onready var player = get_node("player")
+onready var pitfall_container = get_node("pitfall_container") # new line
+onready var birdie = preload("res://birdie.tscn") # new line
+...
+
+func _process(delta):
+	time_label.text = str(int(game_timer.time_left)) 
+	if hair_container.get_child_count() == 0:
+		$level_up.play()
+		level += 1
+		spawn_hair(level * 10)
+	if level >= 1:   # new line
+		handle_pitfalls()  # new line
+
+# new function
+func handle_pitfalls():
+	if level > 1:
+		if pitfall_container.get_child_count() == 0:
+			var b = birdie.instance()
+			b.connect("pitfall_collided",self,"_on_pitfall_collided")
+			pitfall_container.add_child(b)
+			b.position = Vector2(rand_range(0, screensize.x - 40),
+								 rand_range(0, screensize.y - 40))
 	
+# new function
+func _on_pitfall_collided(name, time_impact, score_impact):
+	var new_time_left = 0.1
+	new_time_left = clamp(
+		game_timer.time_left+time_impact,
+		new_time_left,
+		game_timer.wait_time)
+	game_timer.wait_time = new_time_left
+	game_timer.start()
+	score += score_impact
+	score_label.text = str(score)
+
+5. Save the scene ( ctrl+s ) and run!  Does it work?
+
+6. How could we show birdies starting on level 1?
+
+7. What could we do to lower the score instead of the time?
+
+8. Could we lower the score and the time?
 
 DONE!!
 

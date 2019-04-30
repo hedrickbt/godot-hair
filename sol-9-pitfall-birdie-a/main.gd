@@ -33,7 +33,7 @@ func _process(delta):
 		handle_pitfalls()
 
 func handle_pitfalls():
-	if level >= 1:
+	if level > 1:
 		if pitfall_container.get_child_count() == 0:
 			var b = birdie.instance()
 			b.connect("pitfall_collided",self,"_on_pitfall_collided")
@@ -41,16 +41,16 @@ func handle_pitfalls():
 			b.position = Vector2(rand_range(0, screensize.x - 40),
 								 rand_range(0, screensize.y - 40))
 	
-func _on_pitfall_collided(texture):
-	#player.update_active_hair(texture)
-	#$pick_up.play()
+func _on_pitfall_collided(name, time_impact, score_impact):
 	var new_time_left = 0.1
 	new_time_left = clamp(
-		game_timer.time_left-10.0,
+		game_timer.time_left+time_impact,
 		new_time_left,
 		game_timer.wait_time)
 	game_timer.wait_time = new_time_left
 	game_timer.start()
+	score += score_impact
+	score_label.text = str(score)
 		
 
 func spawn_hair(num):
