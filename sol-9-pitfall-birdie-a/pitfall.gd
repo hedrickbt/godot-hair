@@ -19,9 +19,6 @@ func _ready():
 #	velocity.y = rand_range(0,100)
 	sprite = $sprite
 	sprite.play()
-	if name == "birdie":
-		time_impact = -10
-
 
 		
 func _on_pitfall_area_entered(area):

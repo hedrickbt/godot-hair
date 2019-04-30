@@ -38,8 +38,6 @@ func _ready():
 	extents = get_node("collision").get_shape().get_extents()
 	sprite = $sprite
 	sprite.play()
-	if name == "birdie":
-		time_impact = -10
 
 		
 func _on_pitfall_area_entered(area):
@@ -86,7 +84,10 @@ We will need:
 		ii. y: 0
 	d. Lock the sprite and collision together.
 	e. Move the two locked items to the middle of the scene
-4. Save the scene ( ctrl+s ) and play the scene (F6) not the project - is the bird animated?  YES
+
+4. While still working on birdie, set the Script Variables | "Time impact" property to: -10 .  Be carefult that you are not on pitfall.
+
+5. Save the scene ( ctrl+s ) and play the scene (F6) not the project - is the bird animated?  YES
 	
 ### Adding birdie to the main scene
 1. Open the main scene (main.tscn)
@@ -130,13 +131,13 @@ func _on_pitfall_collided(name, time_impact, score_impact):
 	score += score_impact
 	score_label.text = str(score)
 
-5. Save the scene ( ctrl+s ) and run!  Does it work?
+6. Save the scene ( ctrl+s ) and run!  Does it work?
 
-6. How could we show birdies starting on level 1?
+7. How could we show birdies starting on level 1?
 
-7. What could we do to lower the score instead of the time?
+8. What could we do to lower the score instead of the time?
 
-8. Could we lower the score and the time?
+9. Could we lower the score and the time?
 
 DONE!!
 
