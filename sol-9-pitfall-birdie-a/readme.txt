@@ -26,6 +26,9 @@ Goals for birdie:
 extends Area2D
 
 var sprite = null
+var screensize = null
+var extents = null
+
 
 export (int) var time_impact = 0
 export (int) var score_impact = 0
@@ -68,14 +71,18 @@ We will need:
 	b. Rename pitfall to birdie
 	c. Save the scene as birdie.tscn
 	d. BE AWARE - editing the birdie script is also changing the pitfall script
+
+//////////////////////////////// bth left off here 5.1.2019	
+	
+	
 2. Attach the art/birdie...png to the sprite Texture attribute
 	a. Sprite | Frames | [empty] | New Sprite Frames
 	b. Sprite Frames | Open Editor
-	c. For the default animation, drag in birdie-0.png through birdie-3.png
-		ii. Hframes: 4
+	c. For the default animation, drag birdie-0.png ... birdie-3.png
 	b. Node 2D | Transform | Scale
 		i.  x: 0.4
 		ii. y: 0.4
+		
 3. Click on the collision | Shape | [empty]
 	a. New RectangleShape2D
 	b. Resize the circle with your mouse by pulling on the outer dots.
