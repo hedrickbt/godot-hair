@@ -85,7 +85,7 @@ We will need:
 		
 3. Click on the collision | Shape | [empty]
 	a. New RectangleShape2D
-	b. Resize the circle with your mouse by pulling on the outer dots.
+	b. Resize the rectangle with your mouse by pulling on the outer dots.
 	c. Inspector | Node2D | Transform | Position
 		i.  x: 0 
 		ii. y: 0
