@@ -72,9 +72,6 @@ We will need:
 	c. Save the scene as birdie.tscn
 	d. BE AWARE - editing the birdie script is also changing the pitfall script
 
-//////////////////////////////// bth left off here 5.1.2019	
-	
-	
 2. Attach the art/birdie...png to the sprite Texture attribute
 	a. Sprite | Frames | [empty] | New Sprite Frames
 	b. Sprite Frames | Open Editor
@@ -139,6 +136,8 @@ func _on_pitfall_collided(name, time_impact, score_impact):
 	score_label.text = str(score)
 
 6. Save the scene ( ctrl+s ) and run!  Does it work?
+
+######  bth left off here on 5.8.2019
 
 7. How could we show birdies starting on level 1?
 

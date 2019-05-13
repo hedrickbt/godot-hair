@@ -1,0 +1,34 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://pitfall.tscn" type="PackedScene" id=1]
+[ext_resource path="res://birdie.gd" type="Script" id=2]
+[ext_resource path="res://art/birdie-0.png" type="Texture" id=3]
+[ext_resource path="res://art/birdie-1.png" type="Texture" id=4]
+[ext_resource path="res://art/birdie-2.png" type="Texture" id=5]
+[ext_resource path="res://art/birdie-3.png" type="Texture" id=6]
+
+[sub_resource type="SpriteFrames" id=1]
+
+animations = [ {
+"frames": [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
+
+extents = Vector2( 17.5471, 13.3956 )
+
+[node name="birdie" index="0" instance=ExtResource( 1 )]
+position = Vector2( 560.692, 301.899 )
+script = ExtResource( 2 )
+
+[node name="sprite" parent="." index="0"]
+scale = Vector2( 0.4, 0.4 )
+frames = SubResource( 1 )
+frame = 3
+
+[node name="collision" parent="." index="1"]
+shape = SubResource( 2 )
+
