@@ -104,11 +104,28 @@ func _ready():
 	speed = rand_range(0,5)
 	._ready()
 19. Save and run
-20. Is it working as expected?
-
-TODO
-Stopping having birdies show up after game over!
-
+20. Is it working as expected? Should be yes
+21. What happens at game over? The birdies don't go away
+  
+22. Modify the main.gd script
+...
+var level = 1
+var score = 0
+var game_over = false  # new line
+...
+func handle_pitfalls():
+	if !game_over: # new line and then have to indent all lines below
+		if level > 1:
+			if pitfall_container.get_child_count() == 0:
+...
+func _on_game_timer_timeout():
+	game_over = true  # new line
+	$background_music.stop()
+	$go_sfx.play()	
+...
+23. Do the pitfalls stop spawning? YES
+24. What happens to the birdie that was on the screen when game over happens? It finishes going off the screen. 
+  
   
 DONE!!
 

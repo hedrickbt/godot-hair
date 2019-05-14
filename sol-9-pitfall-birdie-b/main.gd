@@ -13,6 +13,7 @@ onready var birdie = preload("res://birdie.tscn")
 var screensize 
 var level = 1
 var score = 0
+var game_over = false
 
 
 # Called when the node enters the scene tree for the first time.
@@ -33,13 +34,14 @@ func _process(delta):
 		handle_pitfalls()
 
 func handle_pitfalls():
-	if level > 1:
-		if pitfall_container.get_child_count() == 0:
-			var b = birdie.instance()
-			b.connect("pitfall_collided",self,"_on_pitfall_collided")
-			pitfall_container.add_child(b)
-			b.position = Vector2(rand_range(0, screensize.x - 40),
-								 rand_range(0, screensize.y - 40))
+	if !game_over:
+		if level > 1:
+			if pitfall_container.get_child_count() == 0:
+				var b = birdie.instance()
+				b.connect("pitfall_collided",self,"_on_pitfall_collided")
+				pitfall_container.add_child(b)
+				b.position = Vector2(rand_range(0, screensize.x - 40),
+									 rand_range(0, screensize.y - 40))
 	
 func _on_pitfall_collided(name, time_impact, score_impact):
 	var new_time_left = 0.1
@@ -68,6 +70,7 @@ func _on_hair_grabbed(texture):
 	score_label.text = str(score)
 
 func _on_game_timer_timeout():
+	game_over = true
 	$background_music.stop()
 	$go_sfx.play()	
 	get_node("player/sprite").stop()
