@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/level_change_ca_ching.wav-ee055bc0c15f783673d93d6c1fdbb3d7.sample"
+
+[deps]
+
+source_file="res://art/sfx/level_change_ca_ching.wav"
+dest_files=[ "res://.import/level_change_ca_ching.wav-ee055bc0c15f783673d93d6c1fdbb3d7.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

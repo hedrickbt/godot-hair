@@ -105,6 +105,9 @@ func _ready():
 	._ready()
 19. Save and run
 20. Is it working as expected? Should be yes
+
+################# bth here 5.15.2019 ##################
+
 21. What happens at game over? The birdies don't go away
   
 22. Modify the main.gd script
