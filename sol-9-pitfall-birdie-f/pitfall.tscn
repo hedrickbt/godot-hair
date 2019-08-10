@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://pitfall.gd" type="Script" id=1]
+[ext_resource path="res://effects/explosion.tscn" type="PackedScene" id=2]
+
+[node name="pitfall" type="Area2D"]
+script = ExtResource( 1 )
+
+[node name="sprite" type="AnimatedSprite" parent="."]
+
+[node name="collision" type="CollisionShape2D" parent="."]
+
+[node name="spawn_sfx" type="AudioStreamPlayer" parent="."]
+
+[node name="explosion" parent="." instance=ExtResource( 2 )]
+visible = false
+
+[connection signal="area_entered" from="." to="." method="_on_pitfall_area_entered"]
+[connection signal="animation_finished" from="explosion" to="." method="_on_explosion_animation_finished"]
