@@ -28,6 +28,9 @@ TODO
 3. Add a couple of more hair styles with different point values
 
 
+9.8.2019
+We finished sol-9-pitfall-birdie-d
+
 7.20.2019
 We left off on finishing sol-9-pitfall-birdie-c before summer break
 
