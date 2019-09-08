@@ -16,7 +16,7 @@ Goals for birdie:
 Modify the pitfall scene
 1. Open the pitfall.tscn scene
 
-2. Add a variable to track when the pitfall first was created - why such a large initial value?
+2. Add a variable to track when the pitfall first was created - why such a large initial value?  To avoid it going away by _process before _ready sets the value.
 var sprite = null
 var screensize
 var extents
@@ -51,7 +51,7 @@ func _process(delta):
 		position = pos	
 
 5. Save the scene and run
-6. Is the birdie only staying on the scene up to 5 seconds?  NO.  Why?  Have set the value when spawning it.
+6. Is the birdie only staying on the scene up to 5 seconds?  NO.  Why?  Have yet to set the value when spawning it.
 
 Modify the main scene
 1. Open the main.tscn
