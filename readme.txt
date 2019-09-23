@@ -26,7 +26,16 @@ TODO
 		ii.  level 3
 		
 3. Add a couple of more hair styles with different point values
+	a.
 
+4. Score tracker
+	a. Track x high scores - maybe 10
+	b. Save scores and load them back in
+	c. Allow player to play again without having to close/open the game
+	
+
+9.22.2019
+We finished sol-9-pitfall-birdie-e
 
 9.8.2019
 We finished sol-9-pitfall-birdie-d
