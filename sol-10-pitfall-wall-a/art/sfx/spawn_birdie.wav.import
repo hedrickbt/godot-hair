@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/spawn_birdie.wav-61df7c12bf1db7768e2b1f09d45eaf06.sample"
+
+[deps]
+
+source_file="res://art/sfx/spawn_birdie.wav"
+dest_files=[ "res://.import/spawn_birdie.wav-61df7c12bf1db7768e2b1f09d45eaf06.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

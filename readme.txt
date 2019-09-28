@@ -1,6 +1,6 @@
 TODO
 1. Add pitfalls
-	a. WIP Twitter icon that moves around haphazardly - take time away 
+	a. DONE Twitter icon that moves around haphazardly - take time away
 		i.   Tweeting bird sound effect
 		ii.  Stays around for 10 seconds
 		iii. Hair dryer doesn't affect
@@ -8,7 +8,7 @@ TODO
 		i. 	 If you collide with wind cloud, should hear whooshing sound
 		ii.  Stays around for 10 seconds
 		iii. Hair dryer doesn't affect
-	c. Wall pieces can show up that block access or slow down - cannot pass through
+	c. WIP Wall pieces can show up that block access or slow down - cannot pass through
 		i.   Construction sounds
 		ii.  Only go away when level clears
 		iii. Hair dryer doesn't affect
