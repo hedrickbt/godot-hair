@@ -15,7 +15,7 @@ _global_script_class_icons={
 
 [application]
 
-config/name="sol-9-pitfall-birdie-f"
+config/name="sol-10-pitfall-wall-a"
 run/main_scene="res://main.tscn"
 config/icon="res://icon.png"
 
